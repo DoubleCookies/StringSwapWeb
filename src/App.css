@@ -21,12 +21,36 @@
 }
 
 .main-content {
+  width: 100%;
   max-width: 1000px;
 
   margin: 0 auto 10px auto;
   padding: 10px;
 
   line-height: 1.5;
+
+  text-align: justify;
+}
+
+.form-label {
+  display: flex;
+  justify-content: center;
+  flex-basis: 50%;
+  margin-left: -10px;
+}
+
+.form-text-area {
+  height: auto;
+  width: 90%;
+  resize: none;
+
+  flex-basis: 50%;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.process-button {
+  margin: 10px;
 }
 
 .footer-block {
