@@ -1,4 +1,4 @@
-# Stats4Wiki
+# StringSwapWeb
 
 Small project with some methods for strings. WIP!
 
