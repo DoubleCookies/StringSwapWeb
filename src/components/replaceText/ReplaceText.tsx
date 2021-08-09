@@ -6,7 +6,9 @@ interface MyProps {
 
 interface MyState {
   startValue: string,
-  finishValue: string
+  finishValue: string,
+  replaceStart: string,
+  replaceFinish: string
 }
 
 
@@ -16,6 +18,8 @@ class ReplaceText extends React.Component<MyProps, MyState> {
 
     this.state = {
       startValue: 'Введите текст...',
+      replaceStart: '',
+      replaceFinish: '',
       finishValue: ''
     };
 
@@ -29,22 +33,50 @@ class ReplaceText extends React.Component<MyProps, MyState> {
     event.preventDefault();
   }
 
-  handleOnChange(event: any) {
+  replaceText() {
+    const {startValue, replaceStart, replaceFinish} = this.state;
+    if (replaceStart) {
+      const resultString = startValue.replaceAll(replaceStart, replaceFinish);
+      this.setState({
+        finishValue: resultString
+      })
+    } else {
+      return;
+    }
+  }
+
+  handleReplaceStart(event: any) {
     this.setState({
-      startValue: event.target.value
+      replaceStart: event.target.value
     });
+    setTimeout(this.replaceText.bind(this), 10);
+  }
+
+  handleReplaceFinish(event: any) {
+    this.setState({
+      replaceFinish: event.target.value
+    });
+    setTimeout(this.replaceText.bind(this), 10);
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit.bind(this)} onChange={this.handleOnChange.bind(this)}>
+      <form>
         <div style={{display: 'flex', flexDirection: 'row'}}>
           <div style={{flexDirection: 'column', flexBasis: '50%'}}>
             <label className="form-label">
               Текст для замены:
             </label>
             <textarea className="form-text-area" defaultValue={this.state.startValue} rows={10}/>
-            <input className="process-button" type="submit" value="Заменить"/>
+            <div style={{margin: 10}}>
+              <label>Что</label>
+              <input className="process-button" onChange={this.handleReplaceStart.bind(this)}
+                     type="text" value={this.state.replaceStart}/>
+              <br/>
+              <label>На что</label>
+              <input className="process-button" onChange={this.handleReplaceFinish.bind(this)}
+                     type="text" value={this.state.replaceFinish}/>
+            </div>
           </div>
           <div style={{flexDirection: 'column', flexBasis: '50%'}}>
             <label className="form-label">
