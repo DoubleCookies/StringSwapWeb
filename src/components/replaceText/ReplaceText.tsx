@@ -24,39 +24,6 @@ class ReplaceText extends React.Component<MyProps, MyState> {
     };
   }
 
-  replaceText() {
-    const { startValue, replaceStart, replaceFinish } = this.state;
-    if (replaceStart) {
-      const resultString = startValue.replaceAll(replaceStart, replaceFinish);
-      this.setState({
-        finishValue: resultString
-      })
-    } else {
-      return;
-    }
-  }
-
-  updateStartValue(event: any) {
-    this.setState({
-      startValue: event.target.value
-    });
-    setTimeout(this.replaceText.bind(this), 10);
-  }
-
-  handleReplaceStart(event: any) {
-    this.setState({
-      replaceStart: event.target.value
-    });
-    setTimeout(this.replaceText.bind(this), 10);
-  }
-
-  handleReplaceFinish(event: any) {
-    this.setState({
-      replaceFinish: event.target.value
-    });
-    setTimeout(this.replaceText.bind(this), 10);
-  }
-
   render() {
     return (
       <form>
@@ -71,13 +38,13 @@ class ReplaceText extends React.Component<MyProps, MyState> {
                       rows={10}/>
             <div style={{ margin: 10 }}>
               <label>Что</label>
-              <input className="process-button"
+              <input className="form-input"
                      onChange={this.handleReplaceStart.bind(this)}
                      type="text"
                      value={this.state.replaceStart}/>
               <br/>
               <label>На что</label>
-              <input className="process-button"
+              <input className="form-input"
                      onChange={this.handleReplaceFinish.bind(this)}
                      type="text"
                      value={this.state.replaceFinish}/>
@@ -92,6 +59,39 @@ class ReplaceText extends React.Component<MyProps, MyState> {
         </div>
       </form>
     );
+  }
+
+  private updateStartValue(event: any) {
+    this.setState({
+      startValue: event.target.value
+    });
+    setTimeout(this.replaceText.bind(this), 10);
+  }
+
+  private handleReplaceStart(event: any) {
+    this.setState({
+      replaceStart: event.target.value
+    });
+    setTimeout(this.replaceText.bind(this), 10);
+  }
+
+  private handleReplaceFinish(event: any) {
+    this.setState({
+      replaceFinish: event.target.value
+    });
+    setTimeout(this.replaceText.bind(this), 10);
+  }
+
+  private replaceText() {
+    const { startValue, replaceStart, replaceFinish } = this.state;
+    if (replaceStart) {
+      const resultString = startValue.replaceAll(replaceStart, replaceFinish);
+      this.setState({
+        finishValue: resultString
+      })
+    } else {
+      return;
+    }
   }
 }
 

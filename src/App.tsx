@@ -19,7 +19,6 @@ function App() {
             <Tab>Замена текста</Tab>
             <Tab>Добавление префикса</Tab>
           </TabList>
-
           <TabPanel>
             <ReplaceText/>
           </TabPanel>

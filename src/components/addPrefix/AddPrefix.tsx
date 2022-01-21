@@ -36,7 +36,7 @@ class AddPrefix extends React.Component<MyProps, MyState> {
                       rows={10}/>
             <div style={{ margin: 10 }}>
               <label>Префикс</label>
-              <input className="process-button"
+              <input className="form-input"
                      onChange={this.handlePrefix.bind(this)}
                      type="text"
                      value={prefix}/>
