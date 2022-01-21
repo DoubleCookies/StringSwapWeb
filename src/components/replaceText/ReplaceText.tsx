@@ -17,7 +17,7 @@ class ReplaceText extends React.Component<MyProps, MyState> {
     super(props);
 
     this.state = {
-      startValue: 'Введите текст...',
+      startValue: '',
       replaceStart: '',
       replaceFinish: '',
       finishValue: ''
@@ -45,6 +45,13 @@ class ReplaceText extends React.Component<MyProps, MyState> {
     }
   }
 
+  updateStartValue(event: any) {
+    this.setState({
+      startValue: event.target.value
+    });
+    setTimeout(this.replaceText.bind(this), 10);
+  }
+
   handleReplaceStart(event: any) {
     this.setState({
       replaceStart: event.target.value
@@ -67,7 +74,7 @@ class ReplaceText extends React.Component<MyProps, MyState> {
             <label className="form-label">
               Текст для замены:
             </label>
-            <textarea className="form-text-area" defaultValue={this.state.startValue} rows={10}/>
+            <textarea className="form-text-area" placeholder="Введите текст для замены" onChange={this.updateStartValue.bind(this)} rows={10}/>
             <div style={{margin: 10}}>
               <label>Что</label>
               <input className="process-button" onChange={this.handleReplaceStart.bind(this)}

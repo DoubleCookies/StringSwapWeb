@@ -9,7 +9,7 @@ function App() {
     <div className="app">
       <header className="app-header">
         <div>
-          Work in progress ༼ つ ◕_◕ ༽つ
+          String Swap ಠ~ಠ
         </div>
       </header>
       <main className="main-content">
@@ -28,7 +28,7 @@ function App() {
         </Tabs>
       </main>
       <footer className="footer-block">
-        <div>2021 <span role="img" aria-label="cookieEmoji">🍪</span></div>
+        <div>2021-2022 <span role="img" aria-label="cookieEmoji">🍪</span></div>
       </footer>
     </div>
   );
