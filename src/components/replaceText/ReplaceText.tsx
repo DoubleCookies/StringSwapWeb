@@ -22,15 +22,6 @@ class ReplaceText extends React.Component<MyProps, MyState> {
       replaceFinish: '',
       finishValue: ''
     };
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleSubmit(event: any) {
-    this.setState({
-      finishValue: this.state.startValue.toUpperCase()
-    });
-    event.preventDefault();
   }
 
   replaceText() {

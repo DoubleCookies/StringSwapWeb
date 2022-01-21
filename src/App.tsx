@@ -3,6 +3,7 @@ import './App.css';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import ReplaceText from "./components/replaceText/ReplaceText";
+import AddPrefix from "./components/addPrefix/AddPrefix";
 
 function App() {
   return (
@@ -16,14 +17,14 @@ function App() {
         <Tabs>
           <TabList>
             <Tab>Замена текста</Tab>
-            <Tab>Title 2</Tab>
+            <Tab>Добавление префикса</Tab>
           </TabList>
 
           <TabPanel>
             <ReplaceText/>
           </TabPanel>
           <TabPanel>
-            <h2>Any content 2</h2>
+            <AddPrefix/>
           </TabPanel>
         </Tabs>
       </main>
