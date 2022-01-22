@@ -44,16 +44,21 @@ class NavboxGenerator extends React.Component<MyProps, MyState> {
     );
   }
 
-  private updateStartValue(event: any) {
-    this.setState({
+  private async updateStartValue(event: any) {
+    await this.setState({
       startValue: event.target.value
     });
-    setTimeout(this.replaceText.bind(this), 10);
+    this.replaceText();
   }
 
   private replaceText() {
     const { startValue } = this.state;
-    let resultString = startValue + '1';
+    const stringsArray = startValue.split('\n').filter(item => item.length > 0);
+    let resultString = '';
+    for (const str of stringsArray) {
+      resultString += '[[' + str + ']] • ';
+    }
+    resultString = resultString.substring(0, resultString.length - 3);
     this.setState({
       finishValue: resultString
     })
