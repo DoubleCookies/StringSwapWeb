@@ -31,7 +31,7 @@ class NavboxGenerator extends React.Component<{}, MyState> {
           </div>
           <div style={{ flexDirection: 'column', flexBasis: '50%' }}>
             <label className="form-label">
-              Результат:
+              Результат
             </label>
             <textarea className="form-text-area" value={finishValue} readOnly={true} rows={10}/>
           </div>

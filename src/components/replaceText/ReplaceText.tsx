@@ -26,7 +26,7 @@ class ReplaceText extends React.Component<{}, MyState> {
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <div style={{ flexDirection: 'column', flexBasis: '50%' }}>
             <label className="form-label">
-              Текст для замены:
+              Исходный текст
             </label>
             <textarea className="form-text-area"
                       placeholder="Введите текст для замены"
@@ -48,7 +48,7 @@ class ReplaceText extends React.Component<{}, MyState> {
           </div>
           <div style={{ flexDirection: 'column', flexBasis: '50%' }}>
             <label className="form-label">
-              Результат:
+              Результат
             </label>
             <textarea className="form-text-area" value={this.state.finishValue} readOnly={true} rows={10}/>
           </div>
