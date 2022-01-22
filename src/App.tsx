@@ -6,6 +6,7 @@ import ReplaceText from "./components/replaceText/ReplaceText";
 import AddPrefix from "./components/addPrefix/AddPrefix";
 import FileNames from "./components/fileNames/FileNames";
 import NavboxGenerator from "./components/navboxGenerator/NavboxGenerator";
+import QuoteReplacement from "./components/quoteReplacement/QuoteReplacement";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Tab>Добавление префикса</Tab>
             <Tab>Список файлов</Tab>
             <Tab>Генератор навбоксов</Tab>
+            <Tab>Замена кавычек</Tab>
           </TabList>
           <TabPanel>
             <ReplaceText/>
@@ -34,6 +36,9 @@ function App() {
           </TabPanel>
           <TabPanel>
             <NavboxGenerator/>
+          </TabPanel>
+          <TabPanel>
+            <QuoteReplacement/>
           </TabPanel>
         </Tabs>
       </main>
