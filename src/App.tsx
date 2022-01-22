@@ -4,6 +4,8 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import ReplaceText from "./components/replaceText/ReplaceText";
 import AddPrefix from "./components/addPrefix/AddPrefix";
+import FileNames from "./components/fileNames/FileNames";
+import NavboxGenerator from "./components/navboxGenerator/NavboxGenerator";
 
 function App() {
   return (
@@ -18,12 +20,20 @@ function App() {
           <TabList>
             <Tab>Замена текста</Tab>
             <Tab>Добавление префикса</Tab>
+            <Tab>Список файлов</Tab>
+            <Tab>Генератор навбоксов</Tab>
           </TabList>
           <TabPanel>
             <ReplaceText/>
           </TabPanel>
           <TabPanel>
             <AddPrefix/>
+          </TabPanel>
+          <TabPanel>
+            <FileNames/>
+          </TabPanel>
+          <TabPanel>
+            <NavboxGenerator/>
           </TabPanel>
         </Tabs>
       </main>
