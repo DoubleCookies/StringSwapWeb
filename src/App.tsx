@@ -7,6 +7,7 @@ import AddPrefix from "./components/addPrefix/AddPrefix";
 import FileNames from "./components/fileNames/FileNames";
 import NavboxGenerator from "./components/navboxGenerator/NavboxGenerator";
 import QuoteReplacement from "./components/quoteReplacement/QuoteReplacement";
+import GalleryGenerator from "./components/galleryGenerator/GalleryGenerator";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Tab>Список файлов</Tab>
             <Tab>Генератор навбоксов</Tab>
             <Tab>Замена кавычек</Tab>
+            <Tab>Генератор галерей</Tab>
           </TabList>
           <TabPanel>
             <ReplaceText/>
@@ -39,6 +41,9 @@ function App() {
           </TabPanel>
           <TabPanel>
             <QuoteReplacement/>
+          </TabPanel>
+          <TabPanel>
+            <GalleryGenerator/>
           </TabPanel>
         </Tabs>
       </main>
