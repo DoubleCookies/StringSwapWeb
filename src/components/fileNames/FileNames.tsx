@@ -44,11 +44,11 @@ class FileNames extends React.Component<MyProps, MyState> {
     )
   }
 
-  private updateStartValue(event: any) {
-    this.setState({
+  private async updateStartValue(event: any) {
+    await this.setState({
       startValue: event.target.value
     });
-    setTimeout(this.replaceText.bind(this), 10);
+    this.replaceText();
   }
 
   private replaceText() {

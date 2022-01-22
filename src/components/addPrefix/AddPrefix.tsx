@@ -53,18 +53,18 @@ class AddPrefix extends React.Component<MyProps, MyState> {
     );
   }
 
-  private updateStartValue(event: any) {
-    this.setState({
+  private async updateStartValue(event: any) {
+    await this.setState({
       startValue: event.target.value
     });
-    setTimeout(this.replaceText.bind(this), 10);
+    this.replaceText();
   }
 
-  private handlePrefix(event: any) {
-    this.setState({
+  private async handlePrefix(event: any) {
+    await this.setState({
       prefix: event.target.value
     });
-    setTimeout(this.replaceText.bind(this), 10);
+    this.replaceText();
   }
 
   private replaceText() {
