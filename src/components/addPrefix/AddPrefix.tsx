@@ -1,16 +1,12 @@
 import React from "react";
 
-interface MyProps {
-
-}
-
 interface MyState {
   startValue: string,
   prefix: string,
   finishValue: string
 }
 
-class AddPrefix extends React.Component<MyProps, MyState> {
+class AddPrefix extends React.Component<{}, MyState> {
   constructor(props: any) {
     super(props);
 

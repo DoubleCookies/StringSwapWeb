@@ -1,9 +1,5 @@
 import React from "react";
 
-interface MyProps {
-
-}
-
 interface MyState {
   startValue: string,
   finishValue: string,
@@ -11,8 +7,7 @@ interface MyState {
   replaceFinish: string
 }
 
-
-class ReplaceText extends React.Component<MyProps, MyState> {
+class ReplaceText extends React.Component<{}, MyState> {
   constructor(props: any) {
     super(props);
 

@@ -1,9 +1,5 @@
 import React from "react";
 
-interface MyProps {
-
-}
-
 interface MyState {
   name: string,
   startNumber: number,
@@ -12,7 +8,7 @@ interface MyState {
   finishValue: string
 }
 
-class GalleryGenerator extends React.Component<MyProps, MyState> {
+class GalleryGenerator extends React.Component<{}, MyState> {
   constructor(props: any) {
     super(props);
 
@@ -30,8 +26,8 @@ class GalleryGenerator extends React.Component<MyProps, MyState> {
     return (
       <form>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <div style={{ flexDirection: 'column', flexBasis: '50%' }}>
-            <div style={{ marginTop: 28 }}>
+          <div style={{ flexDirection: 'column', flexBasis: '50%', alignSelf: 'flex-end' }}>
+            <div style={{ margin: 10 }}>
               <label>Название</label>
               <input className="form-input"
                      onChange={this.updateName.bind(this)}

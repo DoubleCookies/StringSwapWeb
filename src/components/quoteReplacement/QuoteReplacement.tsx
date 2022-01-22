@@ -1,15 +1,11 @@
 import React from "react";
 
-interface MyProps {
-
-}
-
 interface MyState {
   startValue: string,
   finishValue: string
 }
 
-class QuoteReplacement extends React.Component<MyProps, MyState> {
+class QuoteReplacement extends React.Component<{}, MyState> {
   constructor(props: any) {
     super(props);
 
