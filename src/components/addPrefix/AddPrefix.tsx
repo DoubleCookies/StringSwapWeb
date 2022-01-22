@@ -37,7 +37,7 @@ class AddPrefix extends React.Component<MyProps, MyState> {
             <div style={{ margin: 10 }}>
               <label>Префикс</label>
               <input className="form-input"
-                     onChange={this.handlePrefix.bind(this)}
+                     onChange={this.updatePrefix.bind(this)}
                      type="text"
                      value={prefix}/>
             </div>
@@ -60,7 +60,7 @@ class AddPrefix extends React.Component<MyProps, MyState> {
     this.replaceText();
   }
 
-  private async handlePrefix(event: any) {
+  private async updatePrefix(event: any) {
     await this.setState({
       prefix: event.target.value
     });

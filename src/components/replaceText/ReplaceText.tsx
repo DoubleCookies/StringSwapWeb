@@ -25,6 +25,7 @@ class ReplaceText extends React.Component<MyProps, MyState> {
   }
 
   render() {
+    const {replaceStart, replaceFinish} = this.state;
     return (
       <form>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
@@ -41,13 +42,13 @@ class ReplaceText extends React.Component<MyProps, MyState> {
               <input className="form-input"
                      onChange={this.handleReplaceStart.bind(this)}
                      type="text"
-                     value={this.state.replaceStart}/>
+                     value={replaceStart}/>
               <br/>
               <label>На что</label>
               <input className="form-input"
                      onChange={this.handleReplaceFinish.bind(this)}
                      type="text"
-                     value={this.state.replaceFinish}/>
+                     value={replaceFinish}/>
             </div>
           </div>
           <div style={{ flexDirection: 'column', flexBasis: '50%' }}>
