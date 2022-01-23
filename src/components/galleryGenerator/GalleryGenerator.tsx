@@ -1,7 +1,7 @@
 import React from "react";
 
 interface MyState {
-  name: string,
+  fileName: string,
   startNumber: number,
   finishNumber: number,
   extension: string,
@@ -13,7 +13,7 @@ class GalleryGenerator extends React.Component<{}, MyState> {
     super(props);
 
     this.state = {
-      name: '',
+      fileName: '',
       startNumber: 0,
       finishNumber: 0,
       extension: '',
@@ -22,7 +22,7 @@ class GalleryGenerator extends React.Component<{}, MyState> {
   }
 
   render() {
-    const {name, extension, finishValue} = this.state;
+    const { finishValue } = this.state;
     return (
       <form>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
@@ -32,32 +32,41 @@ class GalleryGenerator extends React.Component<{}, MyState> {
               <input className="form-input"
                      onChange={this.updateName.bind(this)}
                      type="text"
-                     value={name}/>
+                     placeholder="fileName"
+              />
               <br/>
               <label>Старт. номер</label>
               <input className="form-input"
                      onChange={this.updateStartNumber.bind(this)}
                      type="text"
+                     placeholder="1"
               />
               <br/>
               <label>Фин. номер</label>
               <input className="form-input"
                      onChange={this.updateFinishNumber.bind(this)}
                      type="text"
+                     placeholder="3"
               />
               <br/>
               <label>Расширение</label>
               <input className="form-input"
                      onChange={this.updateExtension.bind(this)}
                      type="text"
-                     value={extension}/>
+                     placeholder="jpg"
+              />
             </div>
           </div>
           <div style={{ flexDirection: 'column', flexBasis: '50%' }}>
             <label className="form-label">
               Результат
             </label>
-            <textarea className="form-text-area" value={finishValue} readOnly={true} rows={10}/>
+            <textarea className="form-text-area"
+                      value={finishValue}
+                      readOnly={true}
+                      rows={10}
+                      placeholder="fileName 1.jpg&#10;fileName 2.jpg&#10;fileName 3.jpg"
+            />
           </div>
         </div>
       </form>
@@ -66,13 +75,13 @@ class GalleryGenerator extends React.Component<{}, MyState> {
 
   private async updateName(event: any) {
     await this.setState({
-      name: event.target.value
+      fileName: event.target.value
     });
     this.replaceText();
   }
 
   private async updateStartNumber(event: any) {
-    this.setState({
+    await this.setState({
       startNumber: event.target.value
     });
     this.replaceText();
@@ -93,13 +102,13 @@ class GalleryGenerator extends React.Component<{}, MyState> {
   }
 
   private replaceText() {
-    const { name, startNumber, finishNumber, extension } = this.state;
-    if (name.length === 0 || !startNumber || !finishNumber || extension.length === 0) {
+    const { fileName, startNumber, finishNumber, extension } = this.state;
+    if (fileName.length === 0 || !startNumber || !finishNumber || extension.length === 0) {
       return;
     }
     let resultString = '';
     for (let i = startNumber; i < finishNumber; i++) {
-      resultString += name.trim() + ' ' + i + '.' + extension + '\n';
+      resultString += fileName.trim() + ' ' + i + '.' + extension + '\n';
     }
     this.setState({
       finishValue: resultString

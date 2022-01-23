@@ -16,7 +16,7 @@ class NavboxGenerator extends React.Component<{}, MyState> {
   }
 
   render() {
-    const {finishValue} = this.state;
+    const { finishValue } = this.state;
     return (
       <form>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
@@ -25,7 +25,7 @@ class NavboxGenerator extends React.Component<{}, MyState> {
               Исходный текст
             </label>
             <textarea className="form-text-area"
-                      placeholder="Введите текст для замены"
+                      placeholder="abc&#10;qwerty&#10;hello"
                       onChange={this.updateStartValue.bind(this)}
                       rows={10}/>
           </div>
@@ -33,7 +33,12 @@ class NavboxGenerator extends React.Component<{}, MyState> {
             <label className="form-label">
               Результат
             </label>
-            <textarea className="form-text-area" value={finishValue} readOnly={true} rows={10}/>
+            <textarea className="form-text-area"
+                      value={finishValue}
+                      readOnly={true}
+                      rows={10}
+                      placeholder="[[abc]] • [[qwerty]] • [[hello]]"
+            />
           </div>
         </div>
       </form>
