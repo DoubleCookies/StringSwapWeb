@@ -18,31 +18,34 @@ class AddPrefix extends React.Component<{}, MyState> {
   }
 
   render() {
-    const {prefix, finishValue} = this.state;
+    const { finishValue } = this.state;
     return (
       <form>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <div style={{ flexDirection: 'column', flexBasis: '50%' }}>
-            <label className="form-label">
-              Исходный текст
-            </label>
+            <label className="form-label">Исходный текст</label>
             <textarea className="form-text-area"
-                      placeholder="Введите текст для замены"
+                      placeholder="1.jpg&#10;2.jpg&#10;3.jpg"
                       onChange={this.updateStartValue.bind(this)}
-                      rows={10}/>
+                      rows={10}
+            />
             <div style={{ margin: 10 }}>
               <label>Префикс</label>
               <input className="form-input"
+                     placeholder="file:"
                      onChange={this.updatePrefix.bind(this)}
                      type="text"
-                     value={prefix}/>
+              />
             </div>
           </div>
           <div style={{ flexDirection: 'column', flexBasis: '50%' }}>
-            <label className="form-label">
-              Результат
-            </label>
-            <textarea className="form-text-area" value={finishValue} readOnly={true} rows={10}/>
+            <label className="form-label">Результат</label>
+            <textarea className="form-text-area"
+                      placeholder="file:1.jpg&#10;file:2.jpg&#10;file:3.jpg"
+                      value={finishValue}
+                      readOnly={true}
+                      rows={10}
+            />
           </div>
         </div>
       </form>

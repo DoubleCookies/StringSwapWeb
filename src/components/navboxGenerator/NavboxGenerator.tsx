@@ -21,23 +21,20 @@ class NavboxGenerator extends React.Component<{}, MyState> {
       <form>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <div style={{ flexDirection: 'column', flexBasis: '50%' }}>
-            <label className="form-label">
-              Исходный текст
-            </label>
+            <label className="form-label">Исходный текст</label>
             <textarea className="form-text-area"
                       placeholder="abc&#10;qwerty&#10;hello"
                       onChange={this.updateStartValue.bind(this)}
-                      rows={10}/>
+                      rows={10}
+            />
           </div>
           <div style={{ flexDirection: 'column', flexBasis: '50%' }}>
-            <label className="form-label">
-              Результат
-            </label>
+            <label className="form-label">Результат</label>
             <textarea className="form-text-area"
+                      placeholder="[[abc]] • [[qwerty]] • [[hello]]"
                       value={finishValue}
                       readOnly={true}
                       rows={10}
-                      placeholder="[[abc]] • [[qwerty]] • [[hello]]"
             />
           </div>
         </div>

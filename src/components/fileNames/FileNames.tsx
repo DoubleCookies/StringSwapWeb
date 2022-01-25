@@ -16,24 +16,26 @@ class FileNames extends React.Component<{}, MyState> {
   }
 
   render() {
-    const {finishValue} = this.state;
+    const { finishValue } = this.state;
     return (
       <form>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <div style={{ flexDirection: 'column', flexBasis: '50%' }}>
-            <label className="form-label">
-              Исходный текст
-            </label>
+            <label className="form-label">Исходный текст</label>
             <textarea className="form-text-area"
-                      placeholder="Введите текст для замены"
+                      placeholder="1 100%&#10;1 100%&#10;3&#10;3.jpg&#10;3.jpg&#10;4&#10;4.jpg"
                       onChange={this.updateStartValue.bind(this)}
-                      rows={10}/>
+                      rows={10}
+            />
           </div>
           <div style={{ flexDirection: 'column', flexBasis: '50%' }}>
-            <label className="form-label">
-              Результат
-            </label>
-            <textarea className="form-text-area" value={finishValue} readOnly={true} rows={10}/>
+            <label className="form-label">Результат</label>
+            <textarea className="form-text-area"
+                      placeholder="1 100%&#10;3.jpg&#10;4.jpg"
+                      value={finishValue}
+                      readOnly={true}
+                      rows={10}
+            />
           </div>
         </div>
       </form>
@@ -52,7 +54,8 @@ class FileNames extends React.Component<{}, MyState> {
     if (!startValue) {
       return;
     }
-    const stringsArray = startValue.split('\n').filter(item => item.length > 0).filter((item, index) => index % 2 === 1);
+    const stringsArray = startValue.split('\n').filter(item => item.length > 0)
+      .filter((_, index) => index % 2 === 1);
     const resultString = stringsArray.join('\n');
     this.setState({
       finishValue: resultString

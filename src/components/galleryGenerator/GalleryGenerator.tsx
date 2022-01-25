@@ -30,42 +30,41 @@ class GalleryGenerator extends React.Component<{}, MyState> {
             <div style={{ margin: 10 }}>
               <label>Название</label>
               <input className="form-input"
+                     placeholder="fileName"
                      onChange={this.updateName.bind(this)}
                      type="text"
-                     placeholder="fileName"
               />
               <br/>
               <label>Старт. номер</label>
               <input className="form-input"
+                     placeholder="1"
                      onChange={this.updateStartNumber.bind(this)}
                      type="text"
-                     placeholder="1"
               />
               <br/>
               <label>Фин. номер</label>
               <input className="form-input"
+                     placeholder="3"
                      onChange={this.updateFinishNumber.bind(this)}
                      type="text"
-                     placeholder="3"
+
               />
               <br/>
               <label>Расширение</label>
               <input className="form-input"
+                     placeholder="jpg"
                      onChange={this.updateExtension.bind(this)}
                      type="text"
-                     placeholder="jpg"
               />
             </div>
           </div>
           <div style={{ flexDirection: 'column', flexBasis: '50%' }}>
-            <label className="form-label">
-              Результат
-            </label>
+            <label className="form-label">Результат</label>
             <textarea className="form-text-area"
+                      placeholder="fileName 1.jpg&#10;fileName 2.jpg&#10;fileName 3.jpg"
                       value={finishValue}
                       readOnly={true}
                       rows={10}
-                      placeholder="fileName 1.jpg&#10;fileName 2.jpg&#10;fileName 3.jpg"
             />
           </div>
         </div>

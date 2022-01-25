@@ -20,37 +20,41 @@ class ReplaceText extends React.Component<{}, MyState> {
   }
 
   render() {
-    const {replaceStart, replaceFinish} = this.state;
+    const { finishValue } = this.state;
     return (
       <form>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <div style={{ flexDirection: 'column', flexBasis: '50%' }}>
-            <label className="form-label">
-              Исходный текст
-            </label>
+            <label className="form-label">Исходный текст</label>
             <textarea className="form-text-area"
-                      placeholder="Введите текст для замены"
+                      placeholder="qwertyuiop"
                       onChange={this.updateStartValue.bind(this)}
-                      rows={10}/>
+                      rows={10}
+            />
             <div style={{ margin: 10 }}>
               <label>Что</label>
               <input className="form-input"
+                     placeholder="uiop"
                      onChange={this.handleReplaceStart.bind(this)}
                      type="text"
-                     value={replaceStart}/>
+              />
               <br/>
               <label>На что</label>
               <input className="form-input"
+                     placeholder="Asdf"
                      onChange={this.handleReplaceFinish.bind(this)}
                      type="text"
-                     value={replaceFinish}/>
+              />
             </div>
           </div>
           <div style={{ flexDirection: 'column', flexBasis: '50%' }}>
-            <label className="form-label">
-              Результат
-            </label>
-            <textarea className="form-text-area" value={this.state.finishValue} readOnly={true} rows={10}/>
+            <label className="form-label">Результат</label>
+            <textarea className="form-text-area"
+                      placeholder="qwertyAsdf"
+                      value={finishValue}
+                      readOnly={true}
+                      rows={10}
+            />
           </div>
         </div>
       </form>

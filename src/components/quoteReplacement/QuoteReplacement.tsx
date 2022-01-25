@@ -16,24 +16,26 @@ class QuoteReplacement extends React.Component<{}, MyState> {
   }
 
   render() {
-    const {finishValue} = this.state;
+    const { finishValue } = this.state;
     return (
       <form>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <div style={{ flexDirection: 'column', flexBasis: '50%' }}>
-            <label className="form-label">
-              Исходный текст
-            </label>
+            <label className="form-label">Исходный текст</label>
             <textarea className="form-text-area"
-                      placeholder="Введите текст для замены"
+                      placeholder='"Hello there"'
                       onChange={this.updateStartValue.bind(this)}
-                      rows={10}/>
+                      rows={10}
+            />
           </div>
           <div style={{ flexDirection: 'column', flexBasis: '50%' }}>
-            <label className="form-label">
-              Результат
-            </label>
-            <textarea className="form-text-area" value={finishValue} readOnly={true} rows={10}/>
+            <label className="form-label">Результат</label>
+            <textarea className="form-text-area"
+                      placeholder="«Hello there»"
+                      value={finishValue}
+                      readOnly={true}
+                      rows={10}
+            />
           </div>
         </div>
       </form>
