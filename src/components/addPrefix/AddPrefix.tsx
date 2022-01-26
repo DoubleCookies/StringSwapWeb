@@ -48,6 +48,8 @@ class AddPrefix extends React.Component<{}, MyState> {
             />
           </div>
         </div>
+        <br/>
+        <div>Модуль для добавления префикса в начале каждой строки.</div>
       </form>
     );
   }

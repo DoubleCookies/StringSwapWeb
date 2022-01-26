@@ -11,6 +11,9 @@ function App() {
         <div>
           String Swap ಠ~ಠ
         </div>
+        <div className="header-text-mini">
+          Processing text for better FANDOM experience
+        </div>
       </header>
       <main className="main-content">
         <ComponentTabs/>

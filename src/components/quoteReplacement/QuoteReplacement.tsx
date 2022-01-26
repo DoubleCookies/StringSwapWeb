@@ -38,6 +38,7 @@ class QuoteReplacement extends React.Component<{}, MyState> {
             />
           </div>
         </div>
+        <div>Модуль для замены кавычек. Довольно простой (не учитывает вложенность).</div>
       </form>
     );
   }

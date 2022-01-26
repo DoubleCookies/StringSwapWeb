@@ -38,6 +38,7 @@ class NavboxGenerator extends React.Component<{}, MyState> {
             />
           </div>
         </div>
+        <div>Модуль для генерации ссылок для навбоксов.</div>
       </form>
     );
   }

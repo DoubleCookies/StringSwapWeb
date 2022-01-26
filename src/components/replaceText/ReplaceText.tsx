@@ -57,6 +57,7 @@ class ReplaceText extends React.Component<{}, MyState> {
             />
           </div>
         </div>
+        <div>Модуль для замены текста. <i>Ничего лишнего!</i></div>
       </form>
     );
   }
