@@ -57,6 +57,7 @@ class ReplaceText extends React.Component<{}, MyState> {
             />
           </div>
         </div>
+        <hr className="gradient-border"/>
         <div>Модуль для замены текста. <i>Ничего лишнего!</i></div>
       </form>
     );

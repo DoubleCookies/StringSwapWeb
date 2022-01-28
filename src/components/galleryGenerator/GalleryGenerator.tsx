@@ -68,6 +68,7 @@ class GalleryGenerator extends React.Component<{}, MyState> {
             />
           </div>
         </div>
+        <hr className="gradient-border"/>
         <div>Модуль для генерации списка файлов с нужным номером. Использовался раньше для
         галерей, сейчас немного утратил актуальность, но выкидывать не хочется.</div>
       </form>

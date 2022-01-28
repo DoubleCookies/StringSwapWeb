@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: center;
 
-  padding: 20px;
+  padding: 8px;
 
   background-color: #ffdb91;
 
@@ -59,6 +59,14 @@
 
 .form-input {
   margin: 10px;
+}
+
+.gradient-border {
+  margin-bottom: 4px;
+  border: 0;
+  height: 4px;
+
+  background-image: linear-gradient(to right, rgba(238, 188, 90, 0.95) 25px, transparent 85%);
 }
 
 .footer-block {

@@ -38,6 +38,7 @@ class FileNames extends React.Component<{}, MyState> {
             />
           </div>
         </div>
+        <hr className="gradient-border"/>
         <div>Модуль для страницы неиспользуемых файлов. Позволяет вытащить нужные названия файлов,
         до которых сложно добраться иначе.</div>
       </form>

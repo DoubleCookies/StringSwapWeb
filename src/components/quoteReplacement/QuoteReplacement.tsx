@@ -38,6 +38,7 @@ class QuoteReplacement extends React.Component<{}, MyState> {
             />
           </div>
         </div>
+        <hr className="gradient-border"/>
         <div>Модуль для замены кавычек. Довольно простой (не учитывает вложенность).</div>
       </form>
     );

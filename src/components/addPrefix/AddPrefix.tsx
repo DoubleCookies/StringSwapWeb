@@ -48,7 +48,7 @@ class AddPrefix extends React.Component<{}, MyState> {
             />
           </div>
         </div>
-        <br/>
+        <hr className="gradient-border"/>
         <div>Модуль для добавления префикса в начале каждой строки.</div>
       </form>
     );
