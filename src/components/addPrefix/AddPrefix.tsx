@@ -1,12 +1,16 @@
 import React from "react";
 
+interface MyProps {
+  description: string
+}
+
 interface MyState {
   startValue: string,
   prefix: string,
   finishValue: string
 }
 
-class AddPrefix extends React.Component<{}, MyState> {
+class AddPrefix extends React.Component<MyProps, MyState> {
   constructor(props: any) {
     super(props);
 
@@ -18,6 +22,7 @@ class AddPrefix extends React.Component<{}, MyState> {
   }
 
   render() {
+    const { description } = this.props;
     const { finishValue } = this.state;
     return (
       <form>
@@ -49,7 +54,7 @@ class AddPrefix extends React.Component<{}, MyState> {
           </div>
         </div>
         <hr className="gradient-border"/>
-        <div>Модуль для добавления префикса в начале каждой строки.</div>
+        {description}
       </form>
     );
   }

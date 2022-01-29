@@ -1,11 +1,15 @@
 import React from "react";
 
+interface MyProps {
+  description: string
+}
+
 interface MyState {
   startValue: string,
   finishValue: string
 }
 
-class QuoteReplacement extends React.Component<{}, MyState> {
+class QuoteReplacement extends React.Component<MyProps, MyState> {
   constructor(props: any) {
     super(props);
 
@@ -16,6 +20,7 @@ class QuoteReplacement extends React.Component<{}, MyState> {
   }
 
   render() {
+    const { description } = this.props;
     const { finishValue } = this.state;
     return (
       <form>
@@ -39,7 +44,7 @@ class QuoteReplacement extends React.Component<{}, MyState> {
           </div>
         </div>
         <hr className="gradient-border"/>
-        <div>Модуль для замены кавычек. Довольно простой (не учитывает вложенность).</div>
+        {description}
       </form>
     );
   }

@@ -6,35 +6,38 @@ import NavboxGenerator from "./navboxGenerator/NavboxGenerator";
 import QuoteReplacement from "./quoteReplacement/QuoteReplacement";
 import GalleryGenerator from "./galleryGenerator/GalleryGenerator";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 function ComponentTabs() {
+  const { t } = useTranslation(['translation']);
+
   return (
     <Tabs>
       <TabList>
-        <Tab>Замена текста</Tab>
-        <Tab>Добавление префикса</Tab>
-        <Tab>Список файлов</Tab>
-        <Tab>Замена кавычек</Tab>
-        <Tab>Генератор навбоксов</Tab>
-        <Tab>Генератор галерей</Tab>
+        <Tab>{t("replaceText")}</Tab>
+        <Tab>{t("addPrefix")}</Tab>
+        <Tab>{t("fileNames")}</Tab>
+        <Tab>{t("quoteReplacement")}</Tab>
+        <Tab>{t("navboxGenerator")}</Tab>
+        <Tab>{t("galleryGenerator")}</Tab>
       </TabList>
       <TabPanel>
-        <ReplaceText/>
+        <ReplaceText description={t("replaceTextInfo")}/>
       </TabPanel>
       <TabPanel>
-        <AddPrefix/>
+        <AddPrefix description={t("addPrefixInfo")}/>
       </TabPanel>
       <TabPanel>
-        <FileNames/>
+        <FileNames description={t("fileNamesInfo")}/>
       </TabPanel>
       <TabPanel>
-        <QuoteReplacement/>
+        <QuoteReplacement description={t("quoteReplacementInfo")}/>
       </TabPanel>
       <TabPanel>
-        <NavboxGenerator/>
+        <NavboxGenerator description={t("navboxGeneratorInfo")}/>
       </TabPanel>
       <TabPanel>
-        <GalleryGenerator/>
+        <GalleryGenerator description={t("galleryGeneratorInfo")}/>
       </TabPanel>
     </Tabs>
   );

@@ -1,5 +1,9 @@
 import React from "react";
 
+interface MyProps {
+  description: string
+}
+
 interface MyState {
   startValue: string,
   finishValue: string,
@@ -7,7 +11,7 @@ interface MyState {
   replaceFinish: string
 }
 
-class ReplaceText extends React.Component<{}, MyState> {
+class ReplaceText extends React.Component<MyProps, MyState> {
   constructor(props: any) {
     super(props);
 
@@ -20,6 +24,7 @@ class ReplaceText extends React.Component<{}, MyState> {
   }
 
   render() {
+    const { description } = this.props;
     const { finishValue } = this.state;
     return (
       <form>
@@ -58,7 +63,7 @@ class ReplaceText extends React.Component<{}, MyState> {
           </div>
         </div>
         <hr className="gradient-border"/>
-        <div>Модуль для замены текста. <i>Ничего лишнего!</i></div>
+        {description}
       </form>
     );
   }

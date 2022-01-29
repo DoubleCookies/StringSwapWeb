@@ -1,5 +1,9 @@
 import React from "react";
 
+interface MyProps {
+  description: string
+}
+
 interface MyState {
   fileName: string,
   startNumber: number,
@@ -8,7 +12,7 @@ interface MyState {
   finishValue: string
 }
 
-class GalleryGenerator extends React.Component<{}, MyState> {
+class GalleryGenerator extends React.Component<MyProps, MyState> {
   constructor(props: any) {
     super(props);
 
@@ -22,6 +26,7 @@ class GalleryGenerator extends React.Component<{}, MyState> {
   }
 
   render() {
+    const { description } = this.props;
     const { finishValue } = this.state;
     return (
       <form>
@@ -69,8 +74,7 @@ class GalleryGenerator extends React.Component<{}, MyState> {
           </div>
         </div>
         <hr className="gradient-border"/>
-        <div>Модуль для генерации списка файлов с нужным номером. Использовался раньше для
-        галерей, сейчас немного утратил актуальность, но выкидывать не хочется.</div>
+        {description}
       </form>
     );
   }

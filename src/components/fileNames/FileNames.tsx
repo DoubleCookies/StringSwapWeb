@@ -1,11 +1,15 @@
 import React from "react";
 
+interface MyProps {
+  description: string
+}
+
 interface MyState {
   startValue: string,
   finishValue: string
 }
 
-class FileNames extends React.Component<{}, MyState> {
+class FileNames extends React.Component<MyProps, MyState> {
   constructor(props: any) {
     super(props);
 
@@ -16,6 +20,7 @@ class FileNames extends React.Component<{}, MyState> {
   }
 
   render() {
+    const { description } = this.props;
     const { finishValue } = this.state;
     return (
       <form>
@@ -39,8 +44,7 @@ class FileNames extends React.Component<{}, MyState> {
           </div>
         </div>
         <hr className="gradient-border"/>
-        <div>Модуль для страницы неиспользуемых файлов. Позволяет вытащить нужные названия файлов,
-        до которых сложно добраться иначе.</div>
+        {description}
       </form>
     )
   }
