@@ -1,4 +1,6 @@
 import React from "react";
+import ResultLabel from "../ResultLabel";
+import CustomLabel from "../CustomLabel";
 
 interface MyProps {
   description: string
@@ -33,21 +35,21 @@ class GalleryGenerator extends React.Component<MyProps, MyState> {
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <div style={{ flexDirection: 'column', flexBasis: '50%', alignSelf: 'flex-end' }}>
             <div style={{ margin: 10 }}>
-              <label>Название</label>
+              <CustomLabel name="name"/>
               <input className="form-input"
                      placeholder="fileName"
                      onChange={this.updateName.bind(this)}
                      type="text"
               />
               <br/>
-              <label>Старт. номер</label>
+              <CustomLabel name="startNumber"/>
               <input className="form-input"
                      placeholder="1"
                      onChange={this.updateStartNumber.bind(this)}
                      type="text"
               />
               <br/>
-              <label>Фин. номер</label>
+              <CustomLabel name="finNumber"/>
               <input className="form-input"
                      placeholder="3"
                      onChange={this.updateFinishNumber.bind(this)}
@@ -55,7 +57,7 @@ class GalleryGenerator extends React.Component<MyProps, MyState> {
 
               />
               <br/>
-              <label>Расширение</label>
+              <CustomLabel name="extension"/>
               <input className="form-input"
                      placeholder="jpg"
                      onChange={this.updateExtension.bind(this)}
@@ -64,7 +66,7 @@ class GalleryGenerator extends React.Component<MyProps, MyState> {
             </div>
           </div>
           <div style={{ flexDirection: 'column', flexBasis: '50%' }}>
-            <label className="form-label">Результат</label>
+            <ResultLabel/>
             <textarea className="form-text-area"
                       placeholder="fileName 1.jpg&#10;fileName 2.jpg&#10;fileName 3.jpg"
                       value={finishValue}

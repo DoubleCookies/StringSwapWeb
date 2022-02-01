@@ -1,4 +1,6 @@
 import React from "react";
+import StartTextLabel from "../StartTextLabel";
+import ResultLabel from "../ResultLabel";
 
 interface MyProps {
   description: string
@@ -26,7 +28,7 @@ class FileNames extends React.Component<MyProps, MyState> {
       <form>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <div style={{ flexDirection: 'column', flexBasis: '50%' }}>
-            <label className="form-label">Исходный текст</label>
+            <StartTextLabel/>
             <textarea className="form-text-area"
                       placeholder="1 100%&#10;1 100%&#10;3&#10;3.jpg&#10;3.jpg&#10;4&#10;4.jpg"
                       onChange={this.updateStartValue.bind(this)}
@@ -34,7 +36,7 @@ class FileNames extends React.Component<MyProps, MyState> {
             />
           </div>
           <div style={{ flexDirection: 'column', flexBasis: '50%' }}>
-            <label className="form-label">Результат</label>
+            <ResultLabel/>
             <textarea className="form-text-area"
                       placeholder="1 100%&#10;3.jpg&#10;4.jpg"
                       value={finishValue}

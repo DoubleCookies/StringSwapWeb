@@ -1,4 +1,7 @@
 import React from "react";
+import StartTextLabel from "../StartTextLabel";
+import ResultLabel from "../ResultLabel";
+import CustomLabel from "../CustomLabel";
 
 interface MyProps {
   description: string
@@ -30,21 +33,21 @@ class ReplaceText extends React.Component<MyProps, MyState> {
       <form>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <div style={{ flexDirection: 'column', flexBasis: '50%' }}>
-            <label className="form-label">Исходный текст</label>
+            <StartTextLabel/>
             <textarea className="form-text-area"
                       placeholder="qwertyuiop"
                       onChange={this.updateStartValue.bind(this)}
                       rows={10}
             />
             <div style={{ margin: 10 }}>
-              <label>Что</label>
+              <CustomLabel name="find"/>
               <input className="form-input"
                      placeholder="uiop"
                      onChange={this.handleReplaceStart.bind(this)}
                      type="text"
               />
               <br/>
-              <label>На что</label>
+              <CustomLabel name="replaceWith"/>
               <input className="form-input"
                      placeholder="Asdf"
                      onChange={this.handleReplaceFinish.bind(this)}
@@ -53,7 +56,7 @@ class ReplaceText extends React.Component<MyProps, MyState> {
             </div>
           </div>
           <div style={{ flexDirection: 'column', flexBasis: '50%' }}>
-            <label className="form-label">Результат</label>
+            <ResultLabel/>
             <textarea className="form-text-area"
                       placeholder="qwertyAsdf"
                       value={finishValue}

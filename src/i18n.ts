@@ -20,6 +20,16 @@ export const resources = {
       galleryGenerator: 'Gallery generator',
       galleryGeneratorInfo: 'Module for generating file names with numbers. Used for galleries, now it lost relevance ' +
         'but I don\'t want to throw it away.',
+
+      startText: 'Initial text',
+      resultText: 'Result',
+      find: 'Find text',
+      replaceWith: 'Replace with',
+      prefix: 'Prefix',
+      name: 'Name',
+      startNumber: 'Start number',
+      finNumber: 'Last number',
+      extension: 'Extension'
     }
   },
   ru: {
@@ -38,7 +48,17 @@ export const resources = {
       navboxGeneratorInfo: 'Модуль для генерации ссылок для навбоксов.',
       galleryGenerator: 'Генератор галерей',
       galleryGeneratorInfo: 'Модуль для генерации списка файлов с нужным номером. Использовался раньше для ' +
-        'галерей, сейчас немного утратил актуальность, но выкидывать не хочется.'
+        'галерей, сейчас немного утратил актуальность, но выкидывать не хочется.',
+
+      startText: 'Исходный текст',
+      resultText: 'Результат',
+      find: 'Найти',
+      replaceWith: 'Заменить на',
+      prefix: 'Префикс',
+      name: 'Название',
+      startNumber: 'Старт. номер',
+      finNumber: 'Фин. номер',
+      extension: 'Расширение'
     }
   }
 }
