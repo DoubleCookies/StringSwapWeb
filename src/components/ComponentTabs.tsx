@@ -1,10 +1,10 @@
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
-import ReplaceText from "./replaceText/ReplaceText";
-import AddPrefix from "./addPrefix/AddPrefix";
-import FileNames from "./fileNames/FileNames";
-import NavboxGenerator from "./navboxGenerator/NavboxGenerator";
-import QuoteReplacement from "./quoteReplacement/QuoteReplacement";
-import GalleryGenerator from "./galleryGenerator/GalleryGenerator";
+import ReplaceText from "./textModules/ReplaceText";
+import AddPrefix from "./textModules/AddPrefix";
+import FileNames from "./textModules/FileNames";
+import NavboxGenerator from "./textModules/NavboxGenerator";
+import QuoteReplacement from "./textModules/QuoteReplacement";
+import GalleryGenerator from "./textModules/GalleryGenerator";
 import React from "react";
 import { useTranslation } from "react-i18next";
 

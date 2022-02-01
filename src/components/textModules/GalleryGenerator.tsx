@@ -46,14 +46,14 @@ class GalleryGenerator extends React.Component<MyProps, MyState> {
               <input className="form-input"
                      placeholder="1"
                      onChange={this.updateStartNumber.bind(this)}
-                     type="text"
+                     type="number"
               />
               <br/>
               <CustomLabel name="finNumber"/>
               <input className="form-input"
                      placeholder="3"
                      onChange={this.updateFinishNumber.bind(this)}
-                     type="text"
+                     type="number"
 
               />
               <br/>
@@ -115,7 +115,7 @@ class GalleryGenerator extends React.Component<MyProps, MyState> {
       return;
     }
     let resultString = '';
-    for (let i = startNumber; i < finishNumber; i++) {
+    for (let i = startNumber; i <= finishNumber; i++) {
       resultString += fileName.trim() + ' ' + i + '.' + extension + '\n';
     }
     this.setState({
