@@ -6,7 +6,7 @@ function CustomLabel(props: any) {
   const { t } = useTranslation(['translation']);
 
   return (
-    <label>{t(props.name)}</label>
+    <label style={{ display: 'inline-block' }}>{t(props.name)}</label>
   );
 }
 

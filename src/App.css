@@ -43,7 +43,7 @@
 }
 
 .main-content {
-  width: 100%;
+  width: 90%;
   max-width: 1000px;
 
   margin: 0 auto 10px auto;
@@ -58,20 +58,20 @@
   display: flex;
   justify-content: center;
   flex-basis: 50%;
+
   margin-left: -10px;
 }
 
 .form-text-area {
-  height: auto;
   width: 90%;
   resize: none;
 
-  flex-basis: 50%;
-  flex-direction: column;
   margin: 10px;
 }
 
 .form-input {
+  max-width: 80%;
+
   margin: 10px;
 }
 
