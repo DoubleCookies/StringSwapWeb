@@ -10,16 +10,22 @@ import { useTranslation } from "react-i18next";
 
 function ComponentTabs() {
   const { t } = useTranslation(['translation']);
+  const replaceText = t("replaceText");
+  const addPrefix = t("addPrefix");
+  const fileNames = t("fileNames");
+  const quoteReplacement = t("quoteReplacement");
+  const navboxGenerator = t("navboxGenerator");
+  const galleryGenerator = t("galleryGenerator");
 
   return (
     <Tabs>
       <TabList>
-        <Tab>{t("replaceText")}</Tab>
-        <Tab>{t("addPrefix")}</Tab>
-        <Tab>{t("fileNames")}</Tab>
-        <Tab>{t("quoteReplacement")}</Tab>
-        <Tab>{t("navboxGenerator")}</Tab>
-        <Tab>{t("galleryGenerator")}</Tab>
+        <Tab>{replaceText}</Tab>
+        <Tab>{addPrefix}</Tab>
+        <Tab>{fileNames}</Tab>
+        <Tab>{quoteReplacement}</Tab>
+        <Tab>{navboxGenerator}</Tab>
+        <Tab>{galleryGenerator}</Tab>
       </TabList>
       <TabPanel>
         <ReplaceText description={t("replaceTextInfo")}/>
