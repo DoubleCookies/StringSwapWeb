@@ -5,6 +5,8 @@ Project for text processing. Most methods created for MediaWiki and FANDOM bette
 
 Created with [create-react-app](https://github.com/facebook/create-react-app).
 
+Project archived and moved to *[main page repo](https://github.com/DoubleCookies/DoubleCookies.github.io)*.
+
 ## Launch
 - Run `yarn install` for installing packages
 - Run `yarn start` for local launch
